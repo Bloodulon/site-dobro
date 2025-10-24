@@ -1,0 +1,32 @@
+.map {
+	max-width: 1300px;
+	padding: 0 50px;
+	margin: 0 auto;
+}
+
+.map__header {
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+
+.map__container {
+	border-radius: 10px;
+	width: 100%;
+}
+
+.map__frame {
+	width: 100%;
+	border: none;
+	height: 532px;
+}
+
+@media (max-width: 768px) {
+	.map__header--small-window--little {
+    	font-size: 24px;
+    }
+
+    .map--small-window--padding-little {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}

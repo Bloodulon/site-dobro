@@ -1,0 +1,39 @@
+.body__header {
+	margin-bottom: 60px;
+}
+
+.documents {
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+
+.documents__link {
+	display: block;
+	text-decoration: none;
+	line-height: 140%;
+	padding: 0;
+	margin-bottom: 20px;
+	transition: all 0.3s ease-out;
+}
+
+.documents__text {
+	line-height: 140%;
+}
+
+.documents__link:hover, .documents__link:focus {
+	color: rgb(0, 195, 160);
+  	opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+	.documents__link--small-window--little, .documents__text--small-window--little {
+		font-size: 14px;
+	}
+
+	.documents--small-window--padding-little {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}
+

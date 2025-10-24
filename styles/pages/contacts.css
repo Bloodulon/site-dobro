@@ -1,0 +1,32 @@
+.body__header {
+	margin-bottom: 60px;
+}
+
+.contacts {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+
+.contacts__text-container {
+	max-width: 486px;
+}
+
+.contacts__text {
+	line-height: 140%;
+}
+
+@media (max-width: 768px) {
+	.contact__image-container--small-window--hidden {
+		display: none;
+	}
+
+	.contacts----small-window--visible {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}

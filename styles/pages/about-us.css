@@ -1,0 +1,240 @@
+.body__header {
+	margin-bottom: 60px;
+}
+
+.about-us {
+	max-width: 1300px;
+	padding: 0 50px;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+}
+
+.about-us__text-container {
+	max-width: 486px;
+	margin-right: 100px;
+}
+
+.about-us__text-one {
+	margin: 0;
+	line-height: 140%;
+	margin-bottom: 20px;
+}
+
+.about-us__text-two {
+	margin: 0;
+	line-height: 140%;
+}
+
+.about-us__image-container {
+	max-width: 486px;
+	min-width: 380px;
+	width: 100%;
+	height: 267px;
+	position: relative;
+	align-self: bottom;
+	margin-top: auto;
+	margin-bottom: 40px;
+}
+
+.about-us__image-one {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.about-us__image-two {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.body__about-us {
+	margin-bottom: 60px;
+}
+
+.main-target {
+	max-width: 1300px;
+	padding: 0 50px;
+	margin: 0 auto;
+}
+
+.main-targer__container {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(280px, 384px));
+	gap: 24px;
+	width: 100%;
+}
+
+.main-targer__number {
+	font-size: 72px;
+	color: #00C3A0;
+	font-weight: 500;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.main-target__text {
+	margin: 0;
+	font-weight: 600;
+	line-height: 130%;
+}
+
+.main-targer__block {
+	max-width: 384px;
+	width: 100%;
+	padding: 40px;
+	border-radius: 10px;
+	background-color: #F8F7F7;
+}
+
+.body__main-targer {
+	margin-bottom: 60px;
+}
+
+/***********************************************************************/
+
+.field-of-activity {
+	height: 436px;
+	max-width: 1300px;
+	padding: 0 50px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.field-of-activity__text-container {
+	max-width: 531px;
+}
+
+.field-of-activity__header {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 30px;
+}
+
+.field-of-activity__text-one {
+	max-width: 486px;
+	margin: 0;
+	padding: 0;
+	line-height: 140%;
+}
+
+.field-of-activity__image-container {
+	position: relative;
+	max-width: 588px;
+	height: 362px;
+	margin-top: 30px;
+	width: 100%;
+}
+
+.field-of-activity__image-one {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.field-of-activity__image-two {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+
+@media (max-width: 1230px) { 
+	.field-of-activity--middle-window--wrap {
+		height: auto;
+		flex-wrap: wrap;
+	}
+
+	.field-of-activity__text-containe--middle-window-more, .field-of-activity__text-one--middle-window-more {
+		max-width: 1200px;
+	}
+
+}
+
+@media (max-width: 1000px) {
+	.main-targer__container--middle-window--fr2 {
+		grid-template-columns: repeat(2, minmax(280px, 384px));
+	}
+}
+
+@media (max-width: 900px) {
+	.about-us--middle-window--wrap {
+		flex-wrap: wrap;
+	}
+
+	.about-us__image-container--small-window--little {
+		margin-bottom: 0;
+	}
+
+	.about-us__text-containe--middle-window-more {
+		margin-right: 0;
+		max-width: 900px;
+	}
+
+	.about-us__text-two--middle-window--margin-bottom {
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 768px) {
+	.about-us--small-window--padding-little {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.about-us__text-one--small-window--little, .about-us__text-two--small-window--little {
+		font-size: 14px;
+	}
+
+	.main-target--small-window--padding-little {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	.about-us__image-container--small-window--little {
+		height: 208px;
+		min-width: 280px;
+		max-width: 345px;
+	}
+	
+	.about-us__image-one--small-window--little, .about-us__image-two--small-window--little {
+		width: 213px;
+	}
+
+	.field-of-activity__text-one--small-window--little {
+		font-size: 14px;
+	}
+
+	.field-of-activity__image-container--small-window--little {
+		max-width: 345px;
+		height: 206px;
+	}
+
+	.field-of-activity__image-one--small-window--little {
+		width: 124px;
+	}
+
+	.field-of-activity__image-two--small-window--little {
+		width: 257px;
+	}
+
+	.field-of-activity--small-window--padding-little {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}
+
+@media (max-width: 640px) {
+	.main-targer__container--small-window--fr1 {
+		grid-template-columns: 1fr;
+	}
+
+	.main-targer__block--small-window-max-width--more {
+		max-width: 600px;
+	}
+}

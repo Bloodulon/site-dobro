@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="cache-control" content="no-cache">
+	<title>Контакты</title>
+	<link rel="stylesheet" href="styles/normalize.css">
+	<link rel="stylesheet" href="styles/header.css">
+	<link rel="stylesheet" href="styles/map.css">
+	<link rel="stylesheet" href="styles/footer.css">
+	<link rel="stylesheet" href="styles/pages/contacts.css">
+</head>
+<body class="body">
+	<header class="header body__header">
+		<div class="header__container header__container--small-window--padding-little">
+			<a href="index.html" class="logo header__logo header__logo--small-window--litte">
+				<img src="images/logo.svg" class="logo__image logo__image--little-window--little">
+				<p class="logo__text logo__text--small-window--little">АНО центр образовательных<br> и социальных услуг</p>
+			</a>
+			<div class="header__contact-info header__contact-info--small-window--hidden">
+				<p class="header__contact-street">г. Уфа, ул. Чернышевского, 141</p>
+				<p class="header__contact-tel">+7 (347)228-83-30<br>
+				+7 (347) 228-80-59</p>
+			</div>
+			<button class="header__burger header__burger--small-window--visible">
+				<div class="header__burger-line"></div>
+			</button>
+			<button class="background-button"></button>
+		</div>
+		<nav class="navigation navigation--small-window--other">
+			<ul class="navigation__list navigation__list--small-window--other">
+				<li class="navigation__item navigation__item--little-window--width-100"><a href="index.html" class="navigation__link navigation__link--little-window--other">Главная</a></li> 
+				<li class="navigation__item navigation__item--little-window--width-100"><a href="news.html" class="navigation__link navigation__link--little-window--other">Новости</a></li>
+				<li class="navigation__item navigation__item--little-window--width-100"><a href="about-us.html" class="navigation__link navigation__link--little-window--other">О центре</a></li>
+				<li class="navigation__item navigation__item--little-window--width-100"><a href="contacts.html" title="Вы на данной странице" class="navigation__link navigation__link--active navigation__link--little-window--other navigation__link--small-window--active">Контакты</a></li>
+				<li class="navigation__item navigation__item--little-window--width-100"><a href="documents.html" class="navigation__link navigation__link--little-window--other">Документы</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="contacts contacts----small-window--visible">
+			<div class="contacts__text-container">
+				<h1 class="title title--small-window--little about-us__header">Контакты</h1>
+				<p class="contacts__text"><spam class="green">Юридический адрес:</spam> 450078, Республика Башкортостан, г. Уфа, ул. Чернышевского, 141</p>
+				<p class="contacts__text"><spam class="green">Фактический адрес:</spam>  450078, Республика Башкортостан, г. Уфа, ул. Чернышевского, 141</p>
+				<p class="contacts__text"><spam class="green">Время работы:</spam> понедельник - пятница, 8:30 - 17:30</p>
+				<p class="contacts__text"><spam class="green">Электронная почта:</spam> nlga@mail.ru</p>
+				<p class="contacts__text"><spam class="green">Телефон:</spam><br>1.&#8201; +7 (347) 228-83-30<br>2. +7 (347) 228-80-59</p>
+			</div>
+			<div class="contact__image-container contact__image-container--small-window--hidden">
+				<img src="images/fox-chick.png" alt=''>
+			</div>
+		</section>
+		<section class="map body__map map--small-window--padding-little">
+			<h2 class="map__header map__header--small-window--little">Расположение на карте</h2>
+			<div class="map__container" style="position:relative;overflow:hidden;">
+				<a href="https://yandex.ru/maps/172/ufa/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Уфа</a>
+				<a href="https://yandex.ru/maps/172/ufa/house/ulitsa_chernyshevskogo_141/YUwYfwFoSkUEQFtufXtzdHVjbQ==/?ll=55.968303%2C54.725909&utm_medium=mapframe&utm_source=maps&z=16.81" style="color:#eee;font-size:12px;position:absolute;top:14px;">
+					Улица Чернышевского, 141 — Яндекс • Карты
+				</a>
+				<iframe class="map__frame"
+					src="https://yandex.ru/map-widget/v1/?ll=55.968303%2C54.725909&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzcxNTI3OBJv0KDQvtGB0YHQuNGPLCDQoNC10YHQv9GD0LHQu9C40LrQsCDQkdCw0YjQutC-0YDRgtC-0YHRgtCw0L0sINCj0YTQsCwg0YPQu9C40YbQsCDQp9C10YDQvdGL0YjQtdCy0YHQutC-0LPQviwgMTQxIgoNi99fQhVV51pC&z=16.81"
+					width="560"
+					height="400"
+					frameborder="1"
+					allowfullscreen="true"
+					style="position:relative;"
+				></iframe>
+			</div>
+		</section>
+	</main>
+	<footer class="footer footer--small-window--padding-little">
+		<p class="footer__text">АНО центр образовательных <br class="footer__transfer">и социальных услуг</p>
+	</footer>
+	<script src="js/navigation.js"></script>
+</body>
+</html>

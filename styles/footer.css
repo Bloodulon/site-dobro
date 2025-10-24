@@ -1,0 +1,27 @@
+.footer {
+	max-width: 1300px;
+	padding: 0 50px;
+	margin: 0 auto;
+}
+
+.footer__text {
+	color: #909090;
+	font-size: 14px;
+	line-height: 140%;
+	margin: 60px 0;
+}
+
+.footer__transfer {
+	display: none;
+}
+
+@media (max-width: 768px){
+	.footer__transfer {
+		display: inline;
+	}
+
+	.footer--small-window--padding-little {
+    	padding-left: 24px;
+    	padding-right: 24px;
+    }
+}
