@@ -52,32 +52,49 @@ function showSingleNews(newsList, id) {
     return;
   }
 
-  const paragraphs = news.text.split("\n").filter(p => p.trim());
-  let content = "<p class=\"news-page__text\">";
+  const date = formatDate(news.date);
 
-  paragraphs.forEach(p => {
-    if (p.match(/^\d+\./)) {
-      content = content.replace(/<\/p>$/, "");
-      content += `<ol><li>${p.replace(/^\d+\.\s*/, "")}</li></ol><p class="news-page__text">`;
-    } else if (p.startsWith("·")) {
-      content = content.replace(/<\/p>$/, "");
-      content += `<ul><li>${p.slice(1).trim()}</li></ul><p class="news-page__text">`;
-    } else {
-      content += p + "<br><br>";
+  const paragraphs = news.text
+    .split("\n")
+    .map(line => line.trim())
+    .filter(line => line.length > 0);
+
+  let contentHTML = '<div class="news-page__text">';
+
+  paragraphs.forEach((paragraph, index) => {
+    if (paragraph.startsWith("·")) {
+      if (index > 0) contentHTML = contentHTML.replace(/<\/p>$/, "");
+      contentHTML += `<ul><li>${paragraph.slice(1).trim()}</li></ul>`;
+      if (index < paragraphs.length - 1) contentHTML += '<p class="news-page__text">';
+    } 
+    else if (/^\d+\./.test(paragraph)) {
+      if (index > 0) contentHTML = contentHTML.replace(/<\/p>$/, "");
+      contentHTML += `<ol><li>${paragraph.replace(/^\d+\.\s*/, "").trim()}</li></ol>`;
+      if (index < paragraphs.length - 1) contentHTML += '<p class="news-page__text">';
+    }
+    else {
+
+      contentHTML += `<p>${paragraph}</p>`;
     }
   });
-  content += "</p>";
 
-  const images = news.images?.map(img => 
-    `<img class="news-page__image" src="images/news/${img}" alt="">`
-  ).join("") || "";
+  contentHTML += '</div>';
+
+  let imagesHTML = "";
+  if (news.images && news.images.length > 0) {
+    imagesHTML = `<div class="news-page__image-container">`;
+    news.images.forEach(img => {
+      imagesHTML += `<img class="news-page__image" src="images/news/${img}" loading="lazy" alt="">`;
+    });
+    imagesHTML += `</div>`;
+  }
 
   container.innerHTML = `
-    <a href="news.html" class="news-page__link">Назад</a>
+    <a href="news.html" class="news-page__link">Назад к списку</a>
     <h1 class="title title--small-window--little">${news.title}</h1>
-    <p class="news-date">${formatDate(news.date)}</p>
-    ${content}
-    <div class="news-page__image-container">${images}</div>
+    <p class="news-date">${date}</p>
+    ${contentHTML}
+    ${imagesHTML}
   `;
 }
 

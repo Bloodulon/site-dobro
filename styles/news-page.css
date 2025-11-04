@@ -43,10 +43,21 @@
   transform: rotate(180deg) translateX(3px);
 }
 
-.news-page__text {
-	line-height: 140%;
-	margin: 0;
-	margin-bottom: 30px;
+.news-page__text p {
+  margin: 16px 0;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.news-page__text ul, 
+.news-page__text ol {
+  margin: 16px 0;
+  padding-left: 20px;
+}
+
+.news-page__text ul li,
+.news-page__text ol li {
+  margin: 8px 0;
 }
 
 .news-page__image-container {
