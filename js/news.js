@@ -1,4 +1,3 @@
-// js/news.js
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("news-container");
   const urlParams = new URLSearchParams(window.location.search);
@@ -22,7 +21,7 @@ function showNewsList(newsList) {
   const container = document.getElementById("news-container");
   let html = `<h1 class="title title--small-window--little">Новости</h1><div class="news-grid">`;
 
-  newsList.reverse().forEach(news => {
+  newsList.forEach(news => {
     const preview = news.text.split("\n")[0].slice(0, 130) + "...";
     const date = formatDate(news.date);
     const thumb = news.images?.[0] ? `images/news/${news.images[0]}` : "images/news/placeholder.jpg";
