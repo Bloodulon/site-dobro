@@ -1,500 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Новости</title>
-	<link rel="stylesheet" href="styles/normalize.css">
-	<link rel="stylesheet" href="styles/header.css">
-	<link rel="stylesheet" href="styles/new.css">
-	<link rel="stylesheet" href="styles/footer.css">
-	<link rel="stylesheet" href="styles/pages/page-news.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Новости</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/news-page.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <!-- Добавим стили для списка новостей -->
+  <style>
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .news-card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+    }
+    .news-card__img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .news-card__content {
+      padding: 16px;
+    }
+    .news-card__content h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+    .news-card__content h3 a {
+      color: #1a5fb4;
+      text-decoration: none;
+    }
+    .news-card__content h3 a:hover {
+      text-decoration: underline;
+    }
+    .news-card__date {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    .news-card__preview {
+      font-size: 0.9rem;
+      color: #444;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .news-date {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 8px 0;
+    }
+    @media (max-width: 768px) {
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body class="body">
-	<header class="header body__header">
-		<div class="header__container header__container--small-window--padding-little">
-			<a href="index.html" class="logo header__logo header__logo--small-window--litte">
-				<img src="images/logo.svg" class="logo__image logo__image--little-window--little">
-				<p class="logo__text logo__text--small-window--little">АНО центр образовательных<br> и социальных услуг</p>
-			</a>
-			<div class="header__contact-info header__contact-info--small-window--hidden">
-				<p class="header__contact-street">г. Уфа, ул. Чернышевского, 141</p>
-				<p class="header__contact-tel">+7 (347)228-83-30<br>
-				+7 (347) 228-80-59</p>
-			</div>
-			<button class="header__burger header__burger--small-window--visible">
-				<div class="header__burger-line"></div>
-			</button>
-			<button class="background-button"></button>
-		</div>
-		<nav class="navigation navigation--small-window--other">
-			<ul class="navigation__list navigation__list--small-window--other">
-				<li class="navigation__item navigation__item--little-window--width-100"><a href="index.html" class="navigation__link navigation__link--little-window--other">Главная</a></li> 
-				<li class="navigation__item navigation__item--little-window--width-100"><a href="news.html" title="Вы на данной странице" class="navigation__link navigation__link--active navigation__link--little-window--other navigation__link--small-window--active">Новости</a></li>
-				<li class="navigation__item navigation__item--little-window--width-100"><a href="about-us.html" class="navigation__link navigation__link--little-window--other">О центре</a></li>
-				<li class="navigation__item navigation__item--little-window--width-100"><a href="contacts.html" class="navigation__link navigation__link--little-window--other">Контакты</a></li>
-				<li class="navigation__item navigation__item--little-window--width-100"><a href="documents.html" class="navigation__link navigation__link--little-window--other">Документы</a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<section class="news news--small-window--padding-little">
-			<h1 class="title title--small-window--little about-us__header">Новости</h1>
-			<div class="news__container">
-				<div class="news__wrapper">
-					<div class="news__page">
-						<a href="news/news-54.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/54.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Почему важно хранить семейную память? Беседа со школьниками о семейных архивах</h3>
-							<time class="new__date" datetime="2025-10-01">01.10.2025</time>
-						</a>
-						<a href="news/news-53.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/53.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Местная молодежная общественная организация "Ассоциация волонтеров Уфы Республики Башкортостан" начала свою деятельность в 2017 году.</h3>
-							<time class="new__date" datetime="2025-10-30">30.10.2025</time>
-						</a>
-						<a href="news/news-52.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/52.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Как стать волонтером культуры в Республике Башкортостан</h3>
-							<time class="new__date" datetime="2023-01-13">13.01.2023</time>
-						</a>
-						<a href="news/news-51.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/51.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Торжественное вручение грамот в честь дня рождения волонтерского центра "Парикмахер добра"</h3>
-							<time class="new__date" datetime="2024-02-15">15.02.2024</time>
-						</a>
-						<a href="news/news-50.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/50.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">День рекламы: Время креатива и вдохновения 🎉📌</h3>
-							<time class="new__date" datetime="2025-09-23">23.09.2025</time>
-						</a>
-						<a href="news/news-49.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/49.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">В зеленом зале кинотеатра «Родина» по приглашению РОО «Собор русских Башкортостана».</h3>
-							<time class="new__date" datetime="2025-09-20">20.09.2025</time>
-						</a>
-					</div>
-					<div class="news__page">
-						<a href="news/news-48.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/48.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Не пропустите потрясающее зрелище, став частью фестиваля «Живые традиции»!🎁</h3>
-							<time class="new__date" datetime="2025-09-12">12.09.2025</time>
-						</a>
-						<a href="news/news-47.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/47.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">✒️В России 9 сентября отмечают День дизайнера-графика — профессиональный праздник</h3>
-							<time class="new__date" datetime="2025-09-09">09.09.2025</time>
-						</a>
-						<a href="news/news-46.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/46.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Праздник красоты 9 сентября — это День красоты и гармонии.</h3>
-							<time class="new__date" datetime="2025-09-09">09.09.2025</time>
-						</a>
-						<a href="news/news-45.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/45.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Сад Аксаковских историй приглашает</h3>
-							<time class="new__date" datetime="2025-08-05">05.08.2025</time>
-						</a>
-						<a href="news/news-50.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/50.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Живые огни памяти 🕯️</h3>
-							<time class="new__date" datetime="2025-06-22">22.06.2025</time>
-						</a>
-						<a href="news/news-49.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/49.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">23 апреля состоялась встреча с представителями крупной компании по производству и продаже керамической плитки</h3>
-							<time class="new__date" datetime="2025-06-12">12.06.2025</time>
-						</a>
-					</div>
-					<div class="news__page">
-						<a href="news/news-48.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/48.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Не пропустите потрясающее зрелище, став частью фестиваля «Живые традиции»!🎁</h3>
-							<time class="new__date" datetime="2025-09-12">12.09.2025</time>
-						</a>
-						<a href="news/news-47.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/47.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">✒️В России 9 сентября отмечают День дизайнера-графика — профессиональный праздник</h3>
-							<time class="new__date" datetime="2025-09-09">09.09.2025</time>
-						</a>
-						<a href="news/news-46.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/46.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Праздник красоты 9 сентября — это День красоты и гармонии.</h3>
-							<time class="new__date" datetime="2025-09-09">09.09.2025</time>
-						</a>
-						<a href="news/news-45.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/45.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Сад Аксаковских историй приглашает</h3>
-							<time class="new__date" datetime="2025-08-05">05.08.2025</time>
-						</a>
-						<a href="news/news-44.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/44.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Живые огни памяти 🕯️</h3>
-							<time class="new__date" datetime="2025-06-22">22.06.2025</time>
-						</a>
-						<a href="news/news-43.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/43.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">23 апреля состоялась встреча с представителями крупной компании по производству и продаже керамической плитки</h3>
-							<time class="new__date" datetime="2025-06-12">12.06.2025</time>
-						</a>
-					</div>
-					<div class="news__page">
-						<a href="news/news-42.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/42.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Вдохновение. Мастерство. Красота. Всё это — на выставке в Уфе!</h3>
-							<time class="new__date" datetime="2025-06-03">03.06.2025</time>
-						</a>
-						<a href="news/news-41.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/41.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Дипломная работа студентов Уфимского колледжа... посвящена 80-летию Победы в ВОВ.</h3>
-							<time class="new__date" datetime="2025-06-02">02.06.2025</time>
-						</a>
-						<a href="news/news-40.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/40.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Специалист индустрии красоты - это профессионал в области парикмахерского искусства, визажа, эстетической косметологии, маникюра, педикюра, который помогает людям выглядеть лучше и чувствовать себя увереннее.</h3>
-							<time class="new__date" datetime="2025-05-21">21.05.2025</time>
-						</a>
-						<a href="news/news-39.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/39.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">🚀 Победители «АртМастерс Регионы» сняли клип для группы AY YOLA!</h3>
-							<time class="new__date" datetime="2025-05-06">06.05.2025</time>
-						</a>
-						<a href="news/news-38.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/38.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">16 мая с 18:00 до 21:00 состоится Первый "Дизайн просмотр" в Уфе!</h3>
-							<time class="new__date" datetime="2025-04-30">30.04.2025</time>
-						</a>
-						<a href="news/news-37.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/37.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Приглашаем на Форум дизайна в Уфе!</h3>
-							<time class="new__date" datetime="2025-04-30">30.04.2025</time>
-						</a>
-					</div>
-					<div class="news__page">
-						<a href="news/news-36.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/36.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">«ФОРМАльный эксперимент» -2025</h3>
-							<time class="new__date" datetime="2025-04-29">29.04.2025</time>
-						</a>
-						<a href="news/news-35.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/35.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">25 апреля коллекция одежды "Мундирное платье" заняла 1 место во Всероссийском конкурсе «Модельер года».</h3>
-							<time class="new__date" datetime="2025-04-28">28.04.2025</time>
-						</a>
-						<a href="news/news-34.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/34.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Поиграйте со шрифтами, белый ещё белее, всё классно, но надо переделать...</h3>
-							<time class="new__date" datetime="2025-04-27">27.04.2025</time>
-						</a>
-						<a href="news/news-33.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/33.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Васильев Леонид Иванович, директор ГБПОУ УГКТиД, участвовал в заседании Совета по развитию креативных индустрий, которое состоялось 25 апреля под руководством Главы Республики Башкортостан Р.Ф. Хабирова.</h3>
-							<time class="new__date" datetime="2025-04-27">27.04.2025</time>
-						</a>
-						<a href="news/news-32.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/32.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">24–25 апреля столица Башкортостана вновь стала центром притяжения представителей творческих профессий региона — в Уфе прошел масштабный форум «Креастан»</h3>
-							<time class="new__date" datetime="2025-04-27">27.04.2025</time>
-						</a>
-						<a href="news/news-31.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/31.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">23 апреля состоялась встреча с представителями крупной компании по производству и продаже керамической плитки</h3>
-							<time class="new__date" datetime="2025-04-25">25.04.2025</time>
-						</a>
-					</div>
-					<div class="news__page">
-						<a href="news/news-30.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/30.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">«ФОРМАльный эксперимент» -2025</h3>
-							<time class="new__date" datetime="2025-04-23">23.04.2025</time>
-						</a>
-						<a href="news/news-29.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/29.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">В рамках ФП Профессионалитет 19 апреля студенты спец. КМТШИ под руководством А.Д. Кирдякина приняли участие в Российском фестивале моды</h3>
-							<time class="new__date" datetime="2025-04-22">22.04.2025</time>
-						</a>
-						<a href="news/news-28.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/28.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Нрааавится…  …участвовать в проектах платформы 🤤</h3>
-							<time class="new__date" datetime="2025-04-19">19.04.2025</time>
-						</a>
-						<a href="news/news-27.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/27.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">18 апреля День национального костюма народов Республики Башкортостан!</h3>
-							<time class="new__date" datetime="2025-04-18">18.04.2025</time>
-						</a>
-						<a href="news/news-26.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/26.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">9 апреля 2025 года в межвузовском кампусе прошло заседание</h3>
-							<time class="new__date" datetime="2025-04-17">17.04.2025</time>
-						</a>
-						<a href="news/news-25.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/25.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">📌 18 апреля в Уфе состоится региональный этап Всероссийской ярмарки трудоустройства.</h3>
-							<time class="new__date" datetime="2025-04-16">16.04.2025</time>
-						</a>
-					</div>
-					<div class="news__page">
-						<a href="news/news-24.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/24.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">🌟 Твой шанс заявить о себе на UFA FASHION WEEK 2025! 🌟</h3>
-							<time class="new__date" datetime="2025-04-16">16.04.2025</time>
-						</a>
-						<a href="news/news-23.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/23.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">🔥 FACTOR VOSTOKA: Где рождается мода будущего! Тренды, стиль и вдохновение - только здесь и только сейчас! 🔥</h3>
-							<time class="new__date" datetime="2025-04-10">10.04.2025</time>
-						</a>
-						<a href="news/news-22.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/22.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Студенты с интересом слушали форум дизайнеров и архитекторов, лекции и экскурсии по арт-пространствам.</h3>
-							<time class="new__date" datetime="2025-04-10">10.04.2025</time>
-						</a>
-						<a href="news/news-21.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/21.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Предлагайте свои идеи, дорабатывайте их совместно с экспертами и единомышленниками</h3>
-							<time class="new__date" datetime="2025-04-07">07.04.2025</time>
-						</a>
-						<a href="news/news-20.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/20.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">"Доброе утро, Уфа!" полный выпуск 3 апреля 2025</h3>
-							<time class="new__date" datetime="2025-04-03">03.04.2025</time>
-						</a>
-						<a href="news/news-19.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/19.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Моделирование одежды - японский метод</h3>
-							<time class="new__date" datetime="2025-04-03">03.04.2025</time>
-						</a>
-					</div>
-					<div class="news__page">
-						<a href="news/news-18.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/18.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">🕊️ Мода без барьеров на конкурсе «На крыльях»!</h3>
-							<time class="new__date" datetime="2025-04-02">02.04.2025</time>
-						</a>
-						<a href="news/news-17.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/17.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">🎬 Стань режиссером на весенних каникулах! 🎬</h3>
-							<time class="new__date" datetime="2025-03-13">13.03.2025</time>
-						</a>
-						<a href="news/news-16.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/16.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Спорим, этим летом ты хочешь поехать на море? Выбирай Крым: там прекрасные пейзажи, вдохновляющий шум волн и «Таврида.АРТ» https://t.me/tavrida_art 🥹 </h3>
-							<time class="new__date" datetime="2025-03-05">05.03.2025</time>
-						</a>
-						<a href="news/news-15.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/15.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Всемирный ажиотаж вокруг китайского чат-бота с искусственным интеллектом DeepSeek за несколько дней успел обвалить котировки американских конкурентов</h3>
-							<time class="new__date" datetime="2025-02-16">16.02.2025</time>
-						</a>
-						<a href="news/news-14.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/14.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Фонд «Защитники Отечества» дал старт Всероссийскому конкурсу эскизов памятника героям специальной военной операции</h3>
-							<time class="new__date" datetime="2025-02-12">12.02.2025</time>
-						</a>
-						<a href="news/news-13.2.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/13.2.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Итоги конкурса эскизов для компании Мартен Веар</h3>
-							<time class="new__date" datetime="2025-02-10">10.02.2025</time>
-						</a>
-					</div>
-					<div class="news__page">
-						<a href="news/news-12.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/12.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Хотите свой блог, но не знаете, с чего начать?</h3>
-							<time class="new__date" datetime="2025-02-04">04.02.2025</time>
-						</a>
-						<a href="news/news-11.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/11.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">🤩Время достать кисточки и краски!</h3>
-							<time class="new__date" datetime="2025-02-04">04.02.2025</time>
-						</a>
-						<a href="news/news-10.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/10.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">31 января отмечают свой профессиональный праздник люди, связанные с ювелирным искусством по всему миру.</h3>
-							<time class="new__date" datetime="2025-01-31">31.01.2025</time>
-						</a>
-						<a href="news/news-9.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/9.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">💫Открыт прием заявок на конкурс афиш и плакатов фестиваля «Театральное Приволжье»</h3>
-							<time class="new__date" datetime="2025-01-23">23.01.2025</time>
-						</a>
-						<a href="news/news-8.html" class="new"> 
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/8.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Стартовал Всероссийский творческий конкурс «Традиционные игры и игрушки народов России»</h3>
-							<time class="new__date" datetime="2025-01-22">22.01.2025</time>
-						</a>
-						<a href="news/news-7.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/7.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Поздравляем Элину Вакилову и Дарью Полянину с успешным прохождением квалификационного этапа в соревнованиях «АртМастерс регионы»!</h3>
-							<time class="new__date" datetime="2025-01-18">18.01.2025</time>
-						</a>
-					</div>
-					<div class="news__page">
-						<a href="news/news-6.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/6.1.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">В ногу со временем: стильный шоппер с принтом"</h3>
-							<time class="new__date" datetime="2025-01-12">12.01.2025</time>
-						</a>
-						<a href="news/news-5.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/5.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">На базе ГБПОУ УГКтиД, состоялась очередная встреча проектной группы по гранту (СВО)</h3>
-							<time class="new__date" datetime="2024-02-26">26.02.2024</time>
-						</a>
-						<a href="news/news-4.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/4.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Рабочее заседание проектной группы</h3>
-							<time class="new__date" datetime="2024-02-18">18.02.2024</time>
-						</a>
-						<a href="news/news-3.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/3.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Подача заявки на грант</h3>
-							<time class="new__date" datetime="2024-02-17">17.02.2024</time>
-						</a>
-						<a href="news/news-2.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/2.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Башкирия Березовый листок</h3>
-							<time class="new__date" datetime="2024-02-16">16.02.2024</time>
-						</a>
-						<a href="news/news-1.html" class="new">
-							<div class="new__wrapper-image new__wrapper-image--large-middle-window--large new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-								<img class="new__image" src="images/news/1.jpg" alt=''>
-							</div>
-							<h3 class="new__title new__title--small-window--little">Торжественное вручение грамот в честь дня рождения волонтерского центра "Парикмахер добра"</h3>
-							<time class="new__date" datetime="2024-02-15">15.02.2024</time>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="news__pages-container">
-				<button class="button-arrow news__button-back"><img class="news__button-image-back" src="images/arrow-back.svg" alt=""></button>
-				<p class="news__page-count"><span class="news__count">1</span> стр.</p>
-				<button class="button-arrow news__button-forward"><img class="news__button-image-forward" src="images/arrow.svg" alt=""></button>
-			</div>
-		</section>
-	</main>
-	<footer class="footer footer--small-window--padding-little">
-		<p class="footer__text">АНО центр образовательных <br class="footer__transfer">и социальных услуг</p>
-	</footer>
-	<script src="js/navigation.js"></script>
-	<script src="js/page-control.js"></script>
+
+  <!-- ШАПКА -->
+  <header class="header body__header">
+    <div class="header__container">
+      <a href="index.html" class="logo header__logo header__logo--small-window--litte">
+        <img src="images/logo.svg" class="logo__image logo__image--little-window--little">
+        <p class="logo__text logo__text--small-window--little">АНО центр образовательных<br> и социальных услуг</p>
+      </a>
+      <div class="header__contact-info header__contact-info--small-window--hidden">
+        <p class="header__contact-street">г. Уфа, ул. Чернышевского, 141</p>
+        <p class="header__contact-tel">+7 (347)228-83-30<br>+7 (347) 228-80-59</p>
+      </div>
+      <button class="header__burger header__burger--small-window--visible">
+        <div class="header__burger-line"></div>
+      </button>
+      <button class="background-button"></button>
+    </div>
+    <nav class="navigation navigation--small-window--other">
+      <ul class="navigation__list navigation__list--small-window--other">
+        <li class="navigation__item navigation__item--little-window--width-100"><a href="index.html" class="navigation__link navigation__link--little-window--other">Главная</a></li>
+        <li class="navigation__item navigation__item--little-window--width-100"><a href="news.html" class="navigation__link navigation__link--little-window--other">Новости</a></li>
+        <li class="navigation__item navigation__item--little-window--width-100"><a href="about-us.html" class="navigation__link navigation__link--little-window--other">О центре</a></li>
+        <li class="navigation__item navigation__item--little-window--width-100"><a href="contacts.html" class="navigation__link navigation__link--little-window--other">Контакты</a></li>
+        <li class="navigation__item navigation__item--little-window--width-100"><a href="documents.html" class="navigation__link navigation__link--little-window--other">Документы</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ГЛАВНОЕ СОДЕРЖИМОЕ -->
+  <main>
+    <section class="news-page news-page--small-window--padding-little" id="news-container">
+      <!-- Сюда JS вставит: список новостей или одну новость -->
+      <p>Загрузка новостей...</p>
+    </section>
+  </main>
+
+  <!-- ФУТЕР -->
+  <footer class="footer footer--small-window--padding-little">
+    <p class="footer__text">АНО центр образовательных <br class="footer__transfer">и социальных услуг</p>
+  </footer>
+
+  <!-- СКРИПТЫ -->
+  <script src="js/news.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 </html>
