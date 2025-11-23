@@ -69,15 +69,13 @@ function showSingleNews(newsList, id) {
   let mediaHTML = "";
   if ((news.images && news.images.length > 0) || (news.videos && news.videos.length > 0)) {
     mediaHTML = `<div class="news-page__media-container">`;
-    // Изображения
     news.images?.forEach(img => {
       mediaHTML += `<img class="news-page__image" src="images/news/${img}" loading="lazy" alt="">`;
     });
-    // Видео
     news.videos?.forEach(vid => {
       mediaHTML += `
         <video class="news-page__video" controls loading="lazy">
-          <source src="${vid}" type="video/mp4">  <!-- Изменён путь: файлы в корне -->
+          <source src="videos/news/${vid}" type="video/mp4">
           Ваш браузер не поддерживает видео.
         </video>
       `;
