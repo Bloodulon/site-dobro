@@ -37,11 +37,6 @@
 	line-height: 130%;
 	text-overflow: ellipsis;
 	margin-bottom: 27px;
-
-	-webkit-line-clamp: 3; /* Число отображаемых строк */
-    display: -webkit-box; /* Включаем флексбоксы */
-    -webkit-box-orient: vertical; /* Вертикальная ориентация */
-    overflow: hidden; 
 }
 
 .new__date {
@@ -98,4 +93,3 @@
 		height: 158px;
 	}
 }
-
