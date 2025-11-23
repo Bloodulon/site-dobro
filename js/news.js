@@ -75,7 +75,7 @@ function showSingleNews(newsList, id) {
     news.videos?.forEach(vid => {
       mediaHTML += `
         <video class="news-page__video" controls loading="lazy">
-          <source src="videos/news/${vid}" type="video/mp4">
+          <source src="videos/${vid}" type="video/mp4">
           Ваш браузер не поддерживает видео.
         </video>
       `;
