@@ -39,6 +39,27 @@
 	margin-bottom: 27px;
 }
 
+.news-page__media-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Расстояние между медиа */
+  margin: 20px 0;
+}
+
+.news-page__image,
+.news-page__video {
+  max-width: 100%; /* Responsive: не выходит за контейнер */
+  height: auto; /* Сохраняет пропорции */
+  border-radius: 10px; /* Скругление углов, как в карточках */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Лёгкая тень для стиля */
+}
+
+.news-page__video {
+  width: 100%; /* Заполняет ширину */
+  max-height: 600px; /* Лимит высоты, чтобы не было слишком большим */
+}
+
 .new__date {
 	position: absolute;
 	left: 30px;

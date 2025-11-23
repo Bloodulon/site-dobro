@@ -76,35 +76,34 @@
     </footer>
     <script src="js/navigation.js"></script>
     <script>
-		document.addEventListener("DOMContentLoaded", () => {
-		fetch("data/news.json")
-			.then(r => r.json())
-			.then(news => {
-			const container = document.getElementById("home-news");
-			const latest = news.slice(0, 3);
-			
-			let html = "";
-			latest.forEach(n => {
-				const thumb = n.images?.[0] ? `images/news/${n.images[0]}` : "images/news/placeholder.jpg";
-				const date = new Date(n.date).toLocaleDateString("ru-RU", {
-				day: "2-digit", month: "2-digit", year: "numeric"
-				}).replace(/\//g, '.');
-				html += `
-				<a href="news.html?id=${n.id}" class="new">
-					<div class="new__wrapper-image new__wrapper-image--larger-window--margin-little new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
-					<img class="new__image" src="${thumb}" alt="" loading="lazy">
-					</div>
-					<h3 class="new__title new__title--small-window--little">${n.title}</h3>
-					<time class="new__date" datetime="${n.date}">${date}</time>
-				</a>
-				`;
-			});
-			container.innerHTML = html;
-			})
-			.catch(() => {
-			document.getElementById("home-news").innerHTML = "<p style='color:red;'>Ошибка загрузки новостей</p>";
-			});
-		});
+        document.addEventListener("DOMContentLoaded", () => {
+        fetch("data/news.json")
+            .then(r => r.json())
+            .then(news => {
+            const container = document.getElementById("home-news");
+            const latest = news.slice(0, 3);
+            let html = "";
+            latest.forEach(n => {
+                const thumb = n.images?.[0] ? `images/news/${n.images[0]}` : "images/news/placeholder.jpg";
+                const date = new Date(n.date).toLocaleDateString("ru-RU", {
+                day: "2-digit", month: "2-digit", year: "numeric"
+                }).replace(/\//g, '.');
+                html += `
+                <a href="news.html?id=${n.id}" class="new">
+                    <div class="new__wrapper-image new__wrapper-image--larger-window--margin-little new__wrapper-image--large-small-middle-window--large new__wrapper-image--middle-window--large new__wrapper-image--small-window--little new__wrapper-image--very-small-window--little">
+                    <img class="new__image" src="${thumb}" alt="" loading="lazy">
+                    </div>
+                    <h3 class="new__title new__title--small-window--little">${n.title}</h3>
+                    <time class="new__date" datetime="${n.date}">${date}</time>
+                </a>
+                `;
+            });
+            container.innerHTML = html;
+            })
+            .catch(() => {
+            document.getElementById("home-news").innerHTML = "<p style='color:red;'>Ошибка загрузки новостей</p>";
+            });
+        });
     </script>
 </body>
 </html>

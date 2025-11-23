@@ -22,15 +22,7 @@ function showNewsList(newsList) {
   newsList.forEach(news => {
     const preview = news.text.split("\n")[0].slice(0, 130) + "...";
     const date = formatDate(news.date);
-
-    let thumb = "images/news/placeholder.jpg";
-    if (news.images && news.images.length > 0) {
-      const firstImage = news.images.find(img => !img.endsWith('.mp4')); // Или добавьте другие видео-расширения
-      if (firstImage) {
-        thumb = `images/news/${firstImage}`;
-      }
-    }
-    
+    const thumb = news.images?.[0] ? `images/news/${news.images[0]}` : "images/news/placeholder.jpg";
     html += `
       <article class="news-card">
         <img src="${thumb}" alt="" class="news-card__img">
@@ -64,37 +56,39 @@ function showSingleNews(newsList, id) {
       if (index > 0) contentHTML = contentHTML.replace(/<\/p>$/, "");
       contentHTML += `<ul><li>${paragraph.slice(1).trim()}</li></ul>`;
       if (index < paragraphs.length - 1) contentHTML += '<p class="news-page__text">';
-    }
-    else if (/^\d+\./.test(paragraph)) {
+    } else if (/^\d+\./.test(paragraph)) {
       if (index > 0) contentHTML = contentHTML.replace(/<\/p>$/, "");
       contentHTML += `<ol><li>${paragraph.replace(/^\d+\.\s*/, "").trim()}</li></ol>`;
       if (index < paragraphs.length - 1) contentHTML += '<p class="news-page__text">';
-    }
-    else {
+    } else {
       contentHTML += `<p>${paragraph}</p>`;
     }
   });
   contentHTML += '</div>';
-  
-  let imagesHTML = "";
-  if (news.images && news.images.length > 0) {
-    imagesHTML = `<div class="news-page__image-container">`;
-    news.images.forEach(img => {
-      if (img.endsWith('.mp4')) { // Добавьте проверку на другие форматы, если нужно (e.g., || img.endsWith('.webm'))
-        imagesHTML += `<video class="news-page__image" src="images/news/${img}" controls loading="lazy"></video>`;
-      } else {
-        imagesHTML += `<img class="news-page__image" src="images/news/${img}" loading="lazy" alt="">`;
-      }
+
+  let mediaHTML = "";
+  if ((news.images && news.images.length > 0) || (news.videos && news.videos.length > 0)) {
+    mediaHTML = `<div class="news-page__media-container">`;
+    news.images?.forEach(img => {
+      mediaHTML += `<img class="news-page__image" src="images/news/${img}" loading="lazy" alt="">`;
     });
-    imagesHTML += `</div>`;
+    news.videos?.forEach(vid => {
+      mediaHTML += `
+        <video class="news-page__video" controls loading="lazy">
+          <source src="videos/news/${vid}" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+      `;
+    });
+    mediaHTML += `</div>`;
   }
-  
+
   container.innerHTML = `
     <a href="news.html" class="news-page__link">Назад к списку</a>
     <h1 class="title title--small-window--little">${news.title}</h1>
     <p class="news-date">${date}</p>
     ${contentHTML}
-    ${imagesHTML}
+    ${mediaHTML}
   `;
 }
 
